@@ -50,7 +50,7 @@
         console.log(data);
         
         // Update HTML elements with the fetched data
-        document.getElementById('temperature').innerText = data.temperature;
+        document.getElementById('temperature').innerText = data.results[0].data.temperature;
         document.getElementById('humidity').innerText = data.humidity;
         document.getElementById('wind_speed').innerText = data.wind_speed;
         document.getElementById('rainfall').innerText = data.rainfall;
