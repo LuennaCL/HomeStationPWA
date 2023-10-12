@@ -16,6 +16,16 @@
     header {
       text-align: center;
     }
+
+    div.CurrBox {
+      opacity: 0.3;
+      background-color: black;
+    }
+
+    div.GraphBox {
+      opacity: 0.3;
+      background-color: black;
+    }
     /* Add your styles for the weather display, etc. */
   </style>
 </head>
@@ -24,24 +34,24 @@
     <h1>Weather Station - LuennaCL</h1>
   </header>
 
-  <section>
+  <div class="CurrBox"> 
     <h2>Current Weather</h2>
     <!-- Display current weather information here -->
     <p>Temperature: <span id="temperature">Loading...</span></p>
     <p>Humidity: <span id="humidity">Loading...</span></p>
     <p>Wind speed: <span id="wind_speed">Loading...</span></p>
     <p>Rainfall: <span id="rainfall">Loading...</span></p>
-    <!-- Add more weather information as needed -->
-  </section>
+  </div>
+    
 
-  <section>
+  <div class="GraphBox"> 
     <h2>Weather Graph</h2>
     <!-- Display weather forecast information here -->
     <ul id="graph">
       <li>Loading...</li>
       <!-- Add more forecast items as needed -->
     </ul>
-  </section>
+  </div>
 
   <footer>
     <p>&copy; 2023 Weather Station - LuennaCL</p>
