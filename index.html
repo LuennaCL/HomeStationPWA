@@ -22,7 +22,7 @@
     <!-- Display current weather information here -->
     <p>Temperature: <span id="temperature">Loading...</span></p>
     <p>Humidity: <span id="humidity">Loading...</span></p>
-    <p>Wind speed: <span id="windspeed">Loading...</span></p>
+    <p>Wind speed: <span id="wind_speed">Loading...</span></p>
     <p>Rainfall: <span id="rainfall">Loading...</span></p>
     <!-- Add more weather information as needed -->
   </section>
@@ -42,6 +42,33 @@
 
   <script>
     // Your JavaScript for fetching and updating weather data goes here
+    // Function to fetch weather data from a hypothetical API
+    async function fetchWeatherData() {
+      try {
+        const response = await fetch('https://whub.duckdns.org/api/weather/?id=&ordering=-id&time__time=&time__time__gte=&time__time__lte=&user=4&weather_station=3&limit=100');
+        const data = await response.json();
+
+        // Update HTML elements with the fetched data
+        document.getElementById('temperature').innerText = data.temperature;
+        document.getElementById('humidity').innerText = data.humidity;
+        document.getElementById('wind_speed').innerText = data.wind_speed;
+        document.getElementById('rainfall').innerText = data.rainfall;
+
+        // Update forecast (assuming data.forecast is an array of forecast items)
+        // const forecastElement = document.getElementById('forecast');
+        // forecastElement.innerHTML = '';
+        // data.forecast.forEach(item => {
+        //   const li = document.createElement('li');
+        //   li.innerText = `${item.day}: ${item.weather}`;
+        //   forecastElement.appendChild(li);
+        // });
+      } catch (error) {
+        console.error('Error fetching weather data:', error);
+      }
+    }
+
+    // Call the fetchWeatherData function when the page loads
+    document.addEventListener('DOMContentLoaded', fetchWeatherData);
     // You'll need to use APIs to fetch weather data and update the HTML elements accordingly
   </script>
 </body>
