@@ -47,7 +47,8 @@
       try {
         const response = await fetch('https://whub.duckdns.org/api/weather/?id=&ordering=-id&time__time=&time__time__gte=&time__time__lte=&user=4&weather_station=3&limit=1');
         const data = await response.json();
-
+        console.log(data);
+        
         // Update HTML elements with the fetched data
         document.getElementById('temperature').innerText = data.temperature;
         document.getElementById('humidity').innerText = data.humidity;
