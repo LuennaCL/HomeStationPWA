@@ -51,9 +51,9 @@
         
         // Update HTML elements with the fetched data
         document.getElementById('temperature').innerText = data.results[0].data.temperature;
-        document.getElementById('humidity').innerText = data.humidity;
-        document.getElementById('wind_speed').innerText = data.wind_speed;
-        document.getElementById('rainfall').innerText = data.rainfall;
+          document.getElementById('humidity').innerText = data.results[0].data.humidity;
+          document.getElementById('wind_speed').innerText = data.results[0].data.wind_speed;
+          document.getElementById('rainfall').innerText = data.results[0].data.rainfall;
 
         // Update forecast (assuming data.forecast is an array of forecast items)
         // const forecastElement = document.getElementById('forecast');
